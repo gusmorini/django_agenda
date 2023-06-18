@@ -1,3 +1,8 @@
 {
-  "window.zoomLevel": 1
+  "editor.fontFamily": "space mono",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "hack"
 }
+
+/*  ==> !== <= >= */
