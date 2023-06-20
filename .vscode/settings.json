@@ -3,7 +3,8 @@
   "editor.fontSize": 16,
   "editor.fontLigatures": true,
   "terminal.integrated.fontFamily": "cascadia mono",
-  "terminal.integrated.fontSize": 16
+  "terminal.integrated.fontSize": 16,
+  "editor.formatOnSave": true
 }
 
 /*  ==> !== <= >= */
