@@ -1,8 +1,9 @@
 {
-  "editor.fontFamily": "space mono",
+  "editor.fontFamily": "cascadia mono",
   "editor.fontSize": 16,
   "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "hack"
+  "terminal.integrated.fontFamily": "cascadia mono",
+  "terminal.integrated.fontSize": 16
 }
 
 /*  ==> !== <= >= */
