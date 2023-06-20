@@ -1,3 +1,5 @@
 {% extends 'global/base.html' %} {% block content %}
 <h1>index contact</h1>
-{% endblock content %}
+{% for contact in contacts %}
+<p>{{ contact.first_name }}</p>
+{% endfor %} {% endblock content %}
