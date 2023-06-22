@@ -1,8 +1,8 @@
 {
-  "editor.fontFamily": "cascadia mono",
+  "editor.fontFamily": "jetbrainsmono nerd font",
   "editor.fontSize": 16,
   "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "cascadia mono",
+  "terminal.integrated.fontFamily": "jetbrainsmono nerd font",
   "terminal.integrated.fontSize": 16,
   "editor.formatOnSave": true,
   "[python]": {
