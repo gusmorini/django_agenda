@@ -1,15 +1,32 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from contact.models import Contact
+from django.db.models import Q
 
 
 def index(request):
     contacts = Contact.objects.filter(show=True).order_by('id')[0:10]
     context = {'contacts': contacts, 'title': 'Contatos'}
-    return render(request, 'contact/index.html', context,)
+    return render(request, 'contact/index.html', context)
 
 
 def contact(request, contact_id):
     single_contact = get_object_or_404(Contact, pk=contact_id, show=True)
     context = {'contact': single_contact,
                'title': f'{single_contact.first_name} {single_contact.last_name}'}
-    return render(request, 'contact/contact.html', context,)
+    return render(request, 'contact/contact.html', context)
+
+
+def search(request):
+    search_value = request.GET.get('q', '').strip()
+    if not search_value:
+        return redirect('contact:index')
+    contacts = Contact.objects.filter(
+        Q(first_name__icontains=search_value) |
+        Q(last_name__icontains=search_value) |
+        Q(phone__icontains=search_value) |
+        Q(email__icontains=search_value),
+        show=True
+    ).order_by('id')
+    context = {'contacts': contacts, 'title': 'Contatos',
+               'search_value': search_value}
+    return render(request, 'contact/index.html', context)
