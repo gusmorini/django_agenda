@@ -5,6 +5,8 @@
   </head>
   <body>
     {% include 'global/partials/_header.html' %}
-    <div class="content">{% block content %}{% endblock content %}</div>
+    <div class="content">
+      {% block content %}{% endblock content %} 
+      {% include 'global/partials/_pagination.html' %}
   </body>
 </html>
