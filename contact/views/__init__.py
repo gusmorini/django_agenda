@@ -1,4 +1,5 @@
 # flake8: nopa
-#type: ignore
+# type: ignore
 
 from .index import *
+from .forms import *
