@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', include('contact.urls')),
+    path('', RedirectView.as_view(url='contact/')),
+    path('contact/', include('contact.urls')),
     path('admin/', admin.site.urls),
 ]
 
