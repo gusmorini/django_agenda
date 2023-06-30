@@ -7,35 +7,55 @@ class ContactForm(forms.ModelForm):
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'class': 'classe-a classe-b',
-                'placeholder': 'Aqui veio do charfield',
+                'placeholder': 'Primeiro nome',
             }
         ),
         label='Primeiro Nome',
-        help_text='Texto de ajuda para seu usuário',
     )
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    last_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Sobrenome',
+            }
+        ),
+        label='Sobrenome',
+    )
 
-        # self.fields['first_name'].widget.attrs.update({
-        #     'class': 'classe-a classe-b',
-        #     'placeholder': 'Aqui veio do init',
-        # })
+    phone = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'telefone',
+            }
+        ),
+        label='Telefone',
+        help_text='somente números'
+    )
+
+    email = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'email'
+            }
+        ),
+        label='E-mail'
+    )
+
+    description = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                'rows': '10',
+                'required': 'false'
+            }
+        ),
+        label='Descrição'
+    )
 
     class Meta:
         model = models.Contact
         fields = (
-            'first_name', 'last_name', 'phone',
+            'first_name', 'last_name', 'phone', 'email', 'description', 'category'
         )
-        # widgets = {
-        #     'first_name': forms.TextInput(
-        #         attrs={
-        #             'class': 'classe-a classe-b',
-        #             'placeholder': 'Escreva aqui',
-        #         }
-        #     )
-        # }
 
     def clean(self):
         # cleaned_data = self.cleaned_data
