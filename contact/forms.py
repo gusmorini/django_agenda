@@ -7,16 +7,16 @@ class ContactForm(forms.ModelForm):
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Primeiro nome',
+                'placeholder': 'somente primeiro nome',
             }
         ),
-        label='Primeiro Nome',
+        label='Nome',
     )
 
     last_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Sobrenome',
+                'placeholder': 'sobrenome completo',
             }
         ),
         label='Sobrenome',
@@ -45,7 +45,6 @@ class ContactForm(forms.ModelForm):
         widget=forms.Textarea(
             attrs={
                 'rows': '10',
-                'required': 'false'
             }
         ),
         label='Descrição'
