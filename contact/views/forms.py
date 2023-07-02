@@ -16,8 +16,8 @@ def create(request):
         }
 
         if form.is_valid():
-            form.save()
-            return redirect('contact:index')
+            contact = form.save()
+            return redirect('contact:contact', contact_id=contact.pk)
 
     return render(
         request,
