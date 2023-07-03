@@ -14,7 +14,7 @@ def create(request):
 
     if request.method == 'POST':
 
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST, request.FILES)
         context['form'] = form
 
         if form.is_valid():
@@ -22,6 +22,7 @@ def create(request):
             return redirect('contact:index')
 
     return render(request, 'contact/create.html', context)
+
 
 def update(request, contact_id):
     contact = get_object_or_404(Contact, pk=contact_id, show=True)
@@ -35,7 +36,7 @@ def update(request, contact_id):
 
     if request.method == 'POST':
 
-        form = ContactForm(request.POST, instance=contact)
+        form = ContactForm(request.POST, request.FILES, instance=contact)
         context['form'] = form
 
         if form.is_valid():
@@ -44,14 +45,15 @@ def update(request, contact_id):
 
     return render(request, 'contact/create.html', context)
 
+
 def delete(request, contact_id):
     contact = get_object_or_404(Contact, pk=contact_id, show=True)
     confirm = request.POST.get('confirm', 'no')
-    
+
     if confirm == 'yes':
         contact.delete()
         return redirect('contact:index')
-    
-    context = { 'contact': contact, 'confirm': confirm }
+
+    context = {'contact': contact, 'confirm': confirm}
 
     return render(request, 'contact/contact.html', context)

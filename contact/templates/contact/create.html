@@ -10,6 +10,13 @@
         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
         {{ field }} {{ field.errors }} {% if field.help_text %}
         <p class="help-text">{{ field.help_text }}</p>
+        {% endif %} {% if field.name == 'picture' and field.value.url %}
+        <img
+          src="{{field.value.url}}"
+          alt="{{ field.name }}"
+          height="auto"
+          width="50%"
+        />
         {% endif %}
       </div>
       {% endfor %}
