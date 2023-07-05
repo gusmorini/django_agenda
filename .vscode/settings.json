@@ -1,9 +1,4 @@
 {
-  "editor.fontFamily": "victormono nerd font",
-  "editor.fontSize": 14,
-  "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "victormono nerd font",
-  "terminal.integrated.fontSize": 14,
   "editor.formatOnSave": true,
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8"
