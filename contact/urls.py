@@ -10,4 +10,5 @@ urlpatterns = [
     path('create', views.create, name='create'),
     path('search', views.search, name='search'),
     path('', views.index, name='index'),
+    path('register', views.register, name='register'),
 ]
