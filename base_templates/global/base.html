@@ -4,7 +4,10 @@
     {% include 'global/partials/_head.html' %}
   </head>
   <body>
+    
     {% include 'global/partials/_header.html' %}
+    {% include 'global/partials/_messages.html' %}
+
     <div class="content">
       {% block content %}{% endblock content %} 
       {% if page_obj %}
